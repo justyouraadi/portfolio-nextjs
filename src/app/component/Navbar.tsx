@@ -19,8 +19,6 @@ export default function Navbar({}: Props) {
       setTheme("light");
     }
   };
-
-
   const links = [
     {
       href: "/",
@@ -37,7 +35,7 @@ export default function Navbar({}: Props) {
   ];
   return (
     <>
-    <div className="max-w-5xl  mx-auto px-2  py-2">
+    <div className="max-w-6xl  mx-auto px-2  py-2">
       <div className="flex justify-between items-center">
         {/* left side  */}
         <Link href={"/"} className="flex gap-1 items-center">
@@ -51,7 +49,7 @@ export default function Navbar({}: Props) {
           {links.map((data, index) => (
       <Link
         key={index}
-        className={`${pathName == data.href ? "border-b-2 border-[#14b8a6]" : null} px-2 mb-0 transition-all border-transparent`}
+        className={`${pathName === data.href ? "border-b-2 border-[#14b8a6]" : "border-transparent"} px-2 mb-0 transition-all `}
         href={data.href}
       >
         {data.title}
@@ -64,6 +62,7 @@ export default function Navbar({}: Props) {
               ref={animationParent}
               onClick={toggleDarkMode}
             >
+              
               {resolvedTheme == "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
             </button>
           </div>

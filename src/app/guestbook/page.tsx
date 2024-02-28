@@ -1,12 +1,12 @@
-import React from 'react'
-import PageTitle from '../component/PageTitle'
+import React from "react";
+import PageTitle from "../component/PageTitle";
 
-type Props = {}
+type Props = {};
 
 export default function Guestbook({}: Props) {
   return (
-   <>
-   <PageTitle heading='Guestbook' />
-   </>
-  )
+    <>
+      <PageTitle heading="Guestbook" />
+    </>
+  );
 }
