@@ -4,6 +4,9 @@ export default function Home() {
   return (
    <>
    <PageTitle heading="Home"/>
+   <div  >
+    <p>hellu</p>
+   </div>
    </>
   );
 }

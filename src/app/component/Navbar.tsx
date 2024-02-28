@@ -7,7 +7,7 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { usePathname } from "next/navigation";
 type Props = {};
 
-export default function ({}: Props) {
+export default function Navbar({}: Props) {
   const pathName = usePathname();
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [animationParent] = useAutoAnimate();
@@ -15,12 +15,11 @@ export default function ({}: Props) {
   const toggleDarkMode = () => {
     if (resolvedTheme == "light") {
       setTheme("dark");
-    } else if (resolvedTheme == "dark") {
+    }  if (resolvedTheme == "dark") {
       setTheme("light");
     }
   };
 
-  console.log(pathName);
 
   const links = [
     {
@@ -48,32 +47,24 @@ export default function ({}: Props) {
 
         {/* right side  */}
         <div className="flex items-center gap-3">
-          <section className="flex items-center gap-3 ">
-            {links.map((data, value) => {
-              return (
-                <>
-                  <Link
-                    key={value}
-                    className={`${pathName==data.href?"border-b-2 border-[#14b8a6]":null} px-2 mb-0 transition-all border-transparent`}
-                    href={data.href}
-                  >
-                    {data.title}
-                  </Link>
-                </>
-              );
-            })}
-          </section>
+          <div className="flex items-center gap-3 ">
+          {links.map((data, index) => (
+      <Link
+        key={index}
+        className={`${pathName == data.href ? "border-b-2 border-[#14b8a6]" : null} px-2 mb-0 transition-all border-transparent`}
+        href={data.href}
+      >
+        {data.title}
+      </Link>
+    ))}
+          </div>
           <div>
             <button
               className="text-2xl p-1 text-green-300 bg-green-200/30 rounded-md"
               ref={animationParent}
               onClick={toggleDarkMode}
             >
-              {resolvedTheme == "light" ? (
-                <IoMoonOutline />
-              ) : (
-                <IoSunnyOutline />
-              )}
+              {resolvedTheme == "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
             </button>
           </div>
         </div>
