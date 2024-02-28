@@ -24,9 +24,9 @@ export default function Home() {
 
     {/* right side started  */}
     <div className="text-lg flex flex-col gap-4" >
-      <p>Welcome to my portfolio! I'm a versatile frontend developer specializing in crafting engaging and responsive web applications.</p>
+      <p>{`Welcome to my portfolio! I'm a versatile frontend developer specializing in crafting engaging and responsive web applications.`}</p>
 
-      <p>With a strong command of React.js, Tailwind CSS, and TypeScript, along with a solid foundation in sorting algorithms, I'm dedicated to building visually stunning and high-performance user interfaces.</p>
+      <p>{`With a strong command of React.js, Tailwind CSS, and TypeScript, along with a solid foundation in sorting algorithms, I'm dedicated to building visually stunning and high-performance user interfaces.`}</p>
     </div>
     {/* right side ended  */}
    </div>
